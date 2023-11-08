@@ -40,6 +40,8 @@ class Rank(Enum):
     .. automethod:: __ge__
     """
 
+    value: int
+
     ACE = 1
     TWO = 2
     THREE = 3

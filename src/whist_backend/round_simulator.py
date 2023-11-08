@@ -46,10 +46,9 @@ class _Player:
         return picked_card
 
     def get_allowed_cards(self, initial_suit: Optional[Suit]) -> list[Card]:
-        cards_of_initial_suit = [
+        if cards_of_initial_suit := [
             card for card in self.hand if card.suit == initial_suit
-        ]
-        if cards_of_initial_suit:
+        ]:
             return cards_of_initial_suit
         else:
             return self.hand
@@ -92,7 +91,7 @@ def determine_trump_suit_and_hand_sizes(card: Card) -> tuple[Suit, int]:
 
 
 def cyclic_shift(items: list[T], shift_amount: int) -> list[T]:
-    shift_amount = shift_amount % len(items)
+    shift_amount %= len(items)
     return items[shift_amount:] + items[:shift_amount]
 
 
@@ -129,7 +128,7 @@ class RoundSimulator:
             for player_id, (strategy, hand) in enumerate(zip(strategies, hands))
         ]
         self.next_starting_player = 0
-        self.event_listeners = event_listeners if event_listeners else []
+        self.event_listeners = event_listeners or []
         for event_listener in self.event_listeners:
             event_listener.notify_round_start(
                 revealed_card, self.trump_suit, self.hand_size, self.players
@@ -194,8 +193,10 @@ class RoundSimulator:
         player_order = cyclic_shift(self.players, self.next_starting_player)
         cards_played = [self.make_move_on_player(player_order[0], None)]
         initial_suit = cards_played[0].suit
-        for player in player_order[1:]:
-            cards_played.append(self.make_move_on_player(player, initial_suit))
+        cards_played.extend(
+            self.make_move_on_player(player, initial_suit)
+            for player in player_order[1:]
+        )
         trick_winner = find_trick_winner(
             list(zip(player_order, cards_played)), self.trump_suit, initial_suit
         )
