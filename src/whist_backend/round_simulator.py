@@ -171,7 +171,6 @@ class RoundSimulator:
     ) -> Bet:
         bet = player.make_bet(disallowed_bet)
         for other_player in self.players:
-            print(player.player_id, bet)
             other_player.strategy.notify_new_bet(player.player_id, bet)
         return bet
 
