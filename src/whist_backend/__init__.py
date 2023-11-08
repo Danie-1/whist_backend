@@ -1,5 +1,5 @@
 from .bet import Bet
-from .cards import Card, Suit
+from .cards import Card, Rank, Suit
 from .event_listener_protocol import WhistEventListener
 from .player_strategy_protocol import PlayerStrategy
 from .round_simulator import RoundSimulator as RoundSimulator
@@ -12,6 +12,7 @@ __all__ = [
     "Card",
     "PlayerStrategy",
     "RoundSimulator",
+    "Rank",
     "Suit",
     "WhistEventListener",
 ]
