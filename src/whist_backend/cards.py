@@ -56,16 +56,12 @@ class Rank(Enum):
     QUEEN = 12
     KING = 13
 
-    def __lt__(self, other: "Rank") -> bool:
+    def __lt__(self, other: Rank) -> bool:
         """Given `self < other`, return `True` if `other` is strictly better."""
         if not isinstance(other, Rank):
             NotImplementedError("Ranks can only be compared to ranks.")  # type: ignore
 
-        if self == Rank.ACE:
-            return False
-        elif other == Rank.ACE:
-            return True
-        return self.value < other.value
+        return self.whist_value() < other.whist_value()
 
     def __str__(self) -> str:
         """Return a short string representation of the rank, eg `A` or `10`."""
@@ -79,6 +75,9 @@ class Rank(Enum):
             return "K"
         else:
             return str(self.value)
+
+    def whist_value(self) -> int:
+        return 14 if self == Rank.ACE else self.value
 
 
 @dataclass(frozen=True)
