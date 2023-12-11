@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Danie-1/whist_backend/compare/v0.2.0...v0.2.1) (2023-12-11)
+
+
+### Bug Fixes
+
+* add readme to pyproject.toml ([923edbf](https://github.com/Danie-1/whist_backend/commit/923edbfb94ab6f497386c8da5bedaafde256ad5f))
+
 ## [0.2.0](https://github.com/Danie-1/whist_backend/compare/v0.1.0...v0.2.0) (2023-12-11)
 
 
