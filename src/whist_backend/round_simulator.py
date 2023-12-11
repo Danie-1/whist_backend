@@ -24,10 +24,11 @@ class _Player:
         hand: list[Card],
         revealed_card: Card,
         player_id: int,
+        number_of_players: int,
     ) -> None:
         self.strategy = strategy
         self.strategy.notify_round_start(
-            hand, revealed_card.suit, player_id, revealed_card
+            hand, revealed_card.suit, player_id, revealed_card, number_of_players
         )
         self.hand = hand
         self.played_cards: list[Card] = []
@@ -122,9 +123,10 @@ class RoundSimulator:
         self.trump_suit, self.hand_size = determine_trump_suit_and_hand_sizes(
             revealed_card
         )
-        hands = deal_hands(len(strategies), self.hand_size, deck)
+        number_of_players = len(strategies)
+        hands = deal_hands(number_of_players, self.hand_size, deck)
         self.players = [
-            _Player(strategy, hand, revealed_card, player_id)
+            _Player(strategy, hand, revealed_card, player_id, number_of_players)
             for player_id, (strategy, hand) in enumerate(zip(strategies, hands))
         ]
         self.next_starting_player = 0

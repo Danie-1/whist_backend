@@ -67,7 +67,7 @@ class TestPlayer:
             Card(Rank.TEN, Suit.SPADES),
         ]
         strategy.name = "TestBot"
-        player = _Player(strategy, hand, Card(Rank.ACE, Suit.DIAMONDS), 1)
+        player = _Player(strategy, hand, Card(Rank.ACE, Suit.DIAMONDS), 1, 1)
         strategy.notify_round_start.assert_called_with(
             [
                 Card(Rank.ACE, Suit.SPADES),
@@ -78,6 +78,7 @@ class TestPlayer:
             Suit.DIAMONDS,
             1,
             Card(Rank.ACE, Suit.DIAMONDS),
+            1,
         )
         player.make_move(Suit.SPADES)
         strategy.make_move.assert_called_with(
@@ -105,7 +106,7 @@ class TestPlayer:
         ]
         strategy: PlayerStrategy = Mock()
         strategy.make_move.side_effect = [card]
-        player = _Player(strategy, hand, Mock(), Mock())
+        player = _Player(strategy, hand, Mock(), Mock(), Mock())
         player.make_move(None)
 
     @pytest.mark.parametrize(
@@ -127,7 +128,7 @@ class TestPlayer:
         ]
         strategy: PlayerStrategy = Mock()
         strategy.make_move.side_effect = [card]
-        player = _Player(strategy, hand, Mock(), Mock())
+        player = _Player(strategy, hand, Mock(), Mock(), Mock())
         player.make_move(initial_suit)
 
     def test_invalid_move_no_initial_suit(self) -> None:
@@ -139,7 +140,7 @@ class TestPlayer:
         ]
         strategy: PlayerStrategy = Mock()
         strategy.make_move.side_effect = [Card(Rank.ACE, Suit.CLUBS)]
-        player = _Player(strategy, hand, Mock(), Mock())
+        player = _Player(strategy, hand, Mock(), Mock(), Mock())
         with pytest.raises(AssertionError):
             player.make_move(None)
 
@@ -152,7 +153,7 @@ class TestPlayer:
         ]
         strategy: PlayerStrategy = Mock()
         strategy.make_move.side_effect = [Card(Rank.ACE, Suit.SPADES)]
-        player = _Player(strategy, hand, Mock(), Mock())
+        player = _Player(strategy, hand, Mock(), Mock(), Mock())
         with pytest.raises(AssertionError):
             player.make_move(Suit.DIAMONDS)
 
@@ -165,28 +166,28 @@ class TestPlayer:
         ]
         strategy: PlayerStrategy = Mock()
         strategy.name = "TestBot"
-        player = _Player(strategy, hand, Card(Rank.ACE, Suit.DIAMONDS), Mock())
+        player = _Player(strategy, hand, Card(Rank.ACE, Suit.DIAMONDS), Mock(), 1)
         assert str(player) == "TestBot: hand  A♠,10♠, 2♣, 4♦"
 
     def test_make_valid_bet_no_disallowed(self) -> None:
         strategy: PlayerStrategy = Mock()
         strategy.name = "TestBot"
         strategy.make_bet.side_effect = [Bet(0, False)]
-        player = _Player(strategy, Mock(), Mock(), Mock())
+        player = _Player(strategy, Mock(), Mock(), Mock(), Mock())
         player.make_bet(None)
 
     def test_make_valid_bet(self) -> None:
         strategy: PlayerStrategy = Mock()
         strategy.name = "TestBot"
         strategy.make_bet.side_effect = [Bet(0, False)]
-        player = _Player(strategy, Mock(), Mock(), Mock())
+        player = _Player(strategy, Mock(), Mock(), Mock(), Mock())
         player.make_bet(1)
 
     def test_make_invalid_bet(self) -> None:
         strategy: PlayerStrategy = Mock()
         strategy.name = "TestBot"
         strategy.make_bet.side_effect = [Bet(0, False)]
-        player = _Player(strategy, Mock(), Mock(), Mock())
+        player = _Player(strategy, Mock(), Mock(), Mock(), Mock())
         with pytest.raises(AssertionError):
             player.make_bet(0)
 
@@ -223,12 +224,12 @@ class TestPlayer:
             Card(Rank.TWO, Suit.CLUBS),
             Card(Rank.FOUR, Suit.DIAMONDS),
         ]
-        player = _Player(Mock(), hand, Mock(), Mock())
+        player = _Player(Mock(), hand, Mock(), Mock(), Mock())
         assert player.get_allowed_cards(initial_suit) == expected
 
     def test_notify_trick_won(self) -> None:
         strategy: PlayerStrategy = Mock()
-        player = _Player(strategy, Mock(), Mock(), 1)
+        player = _Player(strategy, Mock(), Mock(), 1, 1)
         player.tricks_won = MagicMock()
         player.notify_trick_won(1)
         strategy.notify_trick_won.called_once_with(1)
@@ -236,7 +237,7 @@ class TestPlayer:
 
     def test_notify_trick_not_won(self) -> None:
         strategy: PlayerStrategy = Mock()
-        player = _Player(strategy, Mock(), Mock(), 1)
+        player = _Player(strategy, Mock(), Mock(), 1, 1)
         player.tricks_won = MagicMock()
         player.notify_trick_won(2)
         strategy.notify_trick_won.called_once_with(2)

@@ -22,7 +22,12 @@ class PlayerStrategy(Protocol):
     name: str
 
     def notify_round_start(
-        self, hand: list[Card], trump_suit: Suit, player_id: int, revealed_card: Card
+        self,
+        hand: list[Card],
+        trump_suit: Suit,
+        player_id: int,
+        revealed_card: Card,
+        number_of_players: int,
     ) -> None:
         """Notifies when a round is about to start (i.e. cards have been dealt)."""
         return
