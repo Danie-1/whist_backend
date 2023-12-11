@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/Danie-1/whist_backend/compare/v0.1.0...v0.2.0) (2023-12-11)
+
+
+### Features
+
+* pass number_of_players to notify_round_start ([1232eda](https://github.com/Danie-1/whist_backend/commit/1232edab3850c976dba48f8e2ef154c065bc4d8c))
+
 ## 0.1.0 (2023-11-18)
 
 

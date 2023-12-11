@@ -2,7 +2,7 @@
 name = "whist_backend"
 requires-python = ">=3.9.0"
 description = "Play rounds of whist (with bots or real players)."
-version = "0.1.0"
+version = "0.2.0"
 
 [build-system]
 requires = ["setuptools>=42.0", "wheel"]
