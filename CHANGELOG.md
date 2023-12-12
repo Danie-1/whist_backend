@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/Danie-1/whist_backend/compare/v0.2.2...v0.2.3) (2023-12-12)
+
+
+### Documentation
+
+* add examples to README and sphinx docs ([7f94419](https://github.com/Danie-1/whist_backend/commit/7f94419a100c0804e508178a09bee26acc6a01ea))
+
 ## [0.2.2](https://github.com/Danie-1/whist_backend/compare/v0.2.1...v0.2.2) (2023-12-12)
 
 
