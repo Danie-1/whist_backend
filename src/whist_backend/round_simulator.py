@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Optional, TypeVar
+from typing import TYPE_CHECKING, Optional, Sequence, TypeVar
 
 from .cards import Card, Suit, new_shuffled_deck
 from .event_listener_protocol import WhistEventListener
@@ -114,7 +114,7 @@ def find_trick_winner(
 class RoundSimulator:
     def __init__(
         self,
-        strategies: list[PlayerStrategy],
+        strategies: Sequence[PlayerStrategy],
         *,
         event_listeners: Optional[list[WhistEventListener]] = None,
     ) -> None:
