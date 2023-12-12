@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/Danie-1/whist_backend/compare/v0.2.1...v0.2.2) (2023-12-12)
+
+
+### Bug Fixes
+
+* replace list annotation with Sequence ([30e37a1](https://github.com/Danie-1/whist_backend/commit/30e37a103134f2c17eddb1db31f3f269eb21dcfd))
+
 ## [0.2.1](https://github.com/Danie-1/whist_backend/compare/v0.2.0...v0.2.1) (2023-12-11)
 
 
