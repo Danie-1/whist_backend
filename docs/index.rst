@@ -8,4 +8,5 @@ Whist Game Backend
    getting_started
    protocols
    api_reference
+   example
    changelog

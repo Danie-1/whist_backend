@@ -1,0 +1,68 @@
+REVEALED CARD:  4♥ (trump suit ♥, hand size 6)
+PLAYERS:
+Player 1: hand  8♠, 3♥,10♣, 7♣, K♣, 5♠
+Player 2: hand  Q♣, 5♥, 9♦, 9♥, J♦, 5♦
+Player 3: hand  K♠, A♣, K♦, 6♥, 2♥, 8♦
+Player 4: hand  Q♠, A♦, 4♦, Q♦, 2♣,10♥
+Player 5: hand  6♦, 5♣, 7♥, 6♣,10♠, 3♠
+
+BETS:
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 7
+
+A new trick is starting with 0
+Player 1 played  8♠ (remaining cards  3♥,10♣, 7♣, K♣, 5♠).
+Player 2 played  Q♣ (remaining cards  5♥, 9♦, 9♥, J♦, 5♦).
+Player 3 played  K♠ (remaining cards  A♣, K♦, 6♥, 2♥, 8♦).
+Player 4 played  Q♠ (remaining cards  A♦, 4♦, Q♦, 2♣,10♥).
+Player 5 played 10♠ (remaining cards  6♦, 5♣, 7♥, 6♣, 3♠).
+Player 3 won the trick!
+
+A new trick is starting with 2
+Player 3 played  A♣ (remaining cards  K♦, 6♥, 2♥, 8♦).
+Player 4 played  2♣ (remaining cards  A♦, 4♦, Q♦,10♥).
+Player 5 played  5♣ (remaining cards  6♦, 7♥, 6♣, 3♠).
+Player 1 played 10♣ (remaining cards  3♥, 7♣, K♣, 5♠).
+Player 2 played  5♥ (remaining cards  9♦, 9♥, J♦, 5♦).
+Player 2 won the trick!
+
+A new trick is starting with 1
+Player 2 played  9♦ (remaining cards  9♥, J♦, 5♦).
+Player 3 played  K♦ (remaining cards  6♥, 2♥, 8♦).
+Player 4 played  A♦ (remaining cards  4♦, Q♦,10♥).
+Player 5 played  6♦ (remaining cards  7♥, 6♣, 3♠).
+Player 1 played  3♥ (remaining cards  7♣, K♣, 5♠).
+Player 1 won the trick!
+
+A new trick is starting with 0
+Player 1 played  7♣ (remaining cards  K♣, 5♠).
+Player 2 played  9♥ (remaining cards  J♦, 5♦).
+Player 3 played  6♥ (remaining cards  2♥, 8♦).
+Player 4 played  4♦ (remaining cards  Q♦,10♥).
+Player 5 played  6♣ (remaining cards  7♥, 3♠).
+Player 2 won the trick!
+
+A new trick is starting with 1
+Player 2 played  J♦ (remaining cards  5♦).
+Player 3 played  8♦ (remaining cards  2♥).
+Player 4 played  Q♦ (remaining cards 10♥).
+Player 5 played  7♥ (remaining cards  3♠).
+Player 1 played  K♣ (remaining cards  5♠).
+Player 5 won the trick!
+
+A new trick is starting with 4
+Player 5 played  3♠ (remaining cards ).
+Player 1 played  5♠ (remaining cards ).
+Player 2 played  5♦ (remaining cards ).
+Player 3 played  2♥ (remaining cards ).
+Player 4 played 10♥ (remaining cards ).
+Player 4 won the trick!
+
+Player 1 won -1 points.
+Player 2 won -2 points.
+Player 3 won -1 points.
+Player 4 won -1 points.
+Player 5 won -6 points.
